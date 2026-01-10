@@ -1,0 +1,59 @@
+services:
+  vprodb:
+    image: vprodb:v1
+    build: 
+      context: ./db/
+      dockerfile: Dockerfile
+    ports:
+    - "3306:3306"
+    volumes:
+      - vprodbdata:/var/lib/mysql
+    env_file:
+      - ./db/.env
+        #hostname: db01    
+
+  vprocache:
+    image: memcached
+    ports:
+      - "11211:11211"
+        #hostname: mc01    
+
+  vpromq:
+    image: rabbitmq
+    ports:
+      - "15672:15672"
+    hostname: rm01    
+    env_file:
+      - ./db/.env
+            
+
+  vproapp:
+    image: vproapp:v1
+    build: 
+      context: .
+      dockerfile: app/Dockerfile
+    ports:
+      - "8080:8080"
+    volumes:
+      - vproappdata:/usr/local/tomcat/webapps    
+    depends_on:
+      - vprodb
+      - vprocache
+      - vpromq
+    env_file:
+    - ./db/.env    
+
+  vproweb: 
+    image: vprofileweb:V1
+    build: 
+      context: ./web/
+      dockerfile: Dockerfile
+    restart: always
+    ports:
+      - "80:80"
+    depends_on:
+      - vproapp
+
+volumes:
+  vprodbdata: {}
+  vproappdata: {}
