@@ -1,12 +1,15 @@
-# VProfile – Dockerized Multi-Container Java Application
+# 🚀 VProfile – Containerized Multi-Tier Application (Docker & Docker Compose)
 
-## 📌 Overview
-VProfile is a monolithic Java web application deployed on Apache Tomcat and fully containerized using **Docker** and **Docker Compose**.  
-The application communicates with multiple backend services such as **MySQL**, **Memcached**, and **RabbitMQ**, representing a real-world enterprise setup.
+## 📌 Project Overview
 
-This project demonstrates containerization, service orchestration, inter-service communication, and troubleshooting of a production-like application.
+This project demonstrates the **containerization and deployment of a real-world multi-tier Java web application** using **Docker and Docker Compose**.  
+The application follows a **production-like architecture** with separate services for frontend, backend, database, caching, and messaging.
+
+The main objective of this project is to **practice DevOps concepts**, including containerization, service orchestration, inter-service communication, and environment-based configuration.
 
 ---
+
+
 
 ## 🏗 Architecture
 
@@ -42,67 +45,6 @@ This project demonstrates containerization, service orchestration, inter-service
 │    Memcached       │
 │   Port: 11211      │
 └────────────────────┘
-
-
-
-🔍 Architecture Explanation
-1. Browser (Client)
-
-User accesses the application through a web browser.
-
-Requests are sent to the frontend service over HTTP.
-
-2. vproweb (Frontend – Nginx)
-
-Acts as the reverse proxy / frontend layer.
-
-Serves static content.
-
-Forwards dynamic requests to the backend service (vproapp).
-
-3. vproapp (Backend – Tomcat + Spring MVC)
-
-Core monolithic Java application.
-
-Handles:
-
-Business logic
-
-Authentication
-
-Database operations
-
-Communicates with:
-
-MySQL for persistence
-
-Memcached for caching
-
-RabbitMQ for asynchronous messaging
-
-4. vprodb (MySQL)
-
-Stores application data.
-
-Uses Docker volume for persistent storage.
-
-Accessed only by vproapp.
-
-5. vprocache (Memcached)
-
-Improves performance by caching frequently accessed data.
-
-Reduces database load.
-
-6. vpromq (RabbitMQ)
-
-Handles asynchronous communication and messaging.
-
-Improves scalability and decoupling between components.
-
-
-
----
 
 ## 🧰 Tech Stack
 
@@ -146,7 +88,7 @@ vprofile-project/
 ### 1. Clone the Repository
 
 ```bash
-git clone <your-repository-url>
+git clone https://github.com/Shikha-1811/vprofile-containerized-app.com
 cd vprofile-project
 
 2. Start Services Using Docker Compose
