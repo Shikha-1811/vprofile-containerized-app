@@ -215,8 +215,8 @@ This project is **open for learning and hands-on practice.**
 ```
 ### 📸 Application Preview
 
-output 1 .png
-output 2 .png
-output 3 .png
+output_1.png
+output_2.png
+output_3.png
 ```
 
