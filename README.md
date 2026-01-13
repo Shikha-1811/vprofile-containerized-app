@@ -43,6 +43,8 @@ This project demonstrates containerization, service orchestration, inter-service
 │   Port: 11211      │
 └────────────────────┘
 
+
+
 🔍 Architecture Explanation
 1. Browser (Client)
 
