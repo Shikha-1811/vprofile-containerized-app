@@ -89,8 +89,8 @@ vprofile-project/
 
 1️⃣ **Clone the Repository**
 ```
-git clone <your-repository-url>
-cd vprofile-project
+https://github.com/Shikha-1811/vprofile-containerized-app.git
+cd vprofile-containerized-app
 ```
 
 2️⃣ **Start Services**
