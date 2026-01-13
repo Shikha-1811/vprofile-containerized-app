@@ -212,11 +212,11 @@ This project is **open for learning and hands-on practice.**
 
 ## 📸 Application Output Screenshots
 
-
+```
 ### 📸 Application Preview
 
 output_1.png
 output_2.png
 output_3.png
-
+```
 
