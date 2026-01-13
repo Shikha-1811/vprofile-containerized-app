@@ -215,8 +215,8 @@ This project is **open for learning and hands-on practice.**
 ```
 ### 📸 Application Preview
 
-![Login Page](screenshots/login.png)
-![Dashboard](screenshots/dashboard.png)
-![Docker Containers](screenshots/docker-ps.png)
+output 1 .png
+output 2 .png
+output 3 .png
 ```
 
