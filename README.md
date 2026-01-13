@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # ðŸš€ VProfile â€“ Containerized Multi-Tier Application (Docker & Docker Compose)
 
 ## ðŸ“Œ Project Overview
@@ -107,6 +108,89 @@ sudo docker ps -a
 All environment variables are defined in:
 
 db/.env
+=======
+íº€ VProfile â€“ Containerized Multi-Tier Java Application (Docker & Docker Compose)
+í³Œ Project Overview
+
+VProfile is a multi-tier monolithic Java web application deployed using Docker and Docker Compose.
+This project demonstrates how a real-world enterprise application can be containerized and orchestrated using multiple backend services.
+
+âš ï¸ Important Note (Transparency for Recruiters):
+The application source code and dependencies are cloned from the well-known VProfile project, which is widely used for DevOps hands-on practice.
+The containerization, service orchestration, environment configuration, and deployment setup are implemented and customized by me.
+
+í¿—ï¸ Architecture
+                    +-------------------+
+                    |    vproweb        |
+                    |  Frontend (Web)   |
+                    +---------+---------+
+                              |
+                              v
+                    +-------------------+
+                    |    vproapp        |
+                    | Spring + Tomcat   |
+                    | Backend Service   |
+                    +----+-------+------+
+                         |       |      
+            --------------       | ---------------
+           v                      v               v
+     +-----------+        +---------------+   +-----------+
+     | vprodb    |        | vprocache     |   | vpromq    |
+     | MySQL     |        | Memcached     |   | RabbitMQ  |
+     +-----------+        +---------------+   +-----------+
+
+í·° Tech Stack
+
+Backend: Java, Spring MVC, Apache Tomcat
+
+Frontend: JSP
+
+Database: MySQL
+
+Caching: Memcached
+
+Messaging: RabbitMQ
+
+Containerization: Docker
+
+Orchestration: Docker Compose
+
+í³‚ Project Structure
+vprofile-project/
+â”‚
+â”œâ”€â”€ app/                 # Application Dockerfile
+â”œâ”€â”€ web/                 # Frontend service
+â”œâ”€â”€ db/                  # MySQL configs & .env
+â”œâ”€â”€ src/                 # Java source code
+â”œâ”€â”€ docker-compose.yml   # Multi-container orchestration
+â””â”€â”€ README.md
+
+âš™ï¸ Prerequisites
+
+Docker
+
+Docker Compose
+
+Git
+
+Minimum 4 GB RAM
+
+íº€ Setup & Deployment
+1ï¸âƒ£ Clone Repository
+git clone <your-repository-url>
+cd vprofile-project
+
+2ï¸âƒ£ Start Services Using Docker Compose
+sudo docker compose up -d
+
+3ï¸âƒ£ Verify Running Containers
+sudo docker ps -a
+
+í´ Configuration
+í³„ Environment Variables
+
+Location: db/.env
+>>>>>>> e8512a4 (Updated professional README)
 
 MYSQL_ROOT_PASSWORD=vprodbpass
 MYSQL_DATABASE=accounts
@@ -114,6 +198,7 @@ MYSQL_DATABASE=accounts
 RABBITMQ_DEFAULT_USER=guest
 RABBITMQ_DEFAULT_PASS=guest
 
+<<<<<<< HEAD
 ðŸ§¾ Application Properties
 
 Location:
@@ -124,13 +209,27 @@ Database Configuration
 jdbc:mysql://db01:3306/accounts
 
 Memcached Hosts
+=======
+âš™ï¸ Application Properties
+
+Location: src/main/resources/application.properties
+
+Database
+jdbc:mysql://db01:3306/accounts
+
+Memcached
+>>>>>>> e8512a4 (Updated professional README)
 mc01
 127.0.0.2
 
 RabbitMQ
 rmq01:5672
 
+<<<<<<< HEAD
 Spring Security Credentials
+=======
+Spring Security
+>>>>>>> e8512a4 (Updated professional README)
 Username: admin_vp
 Password: admin_vp
 
@@ -138,7 +237,11 @@ JSP View Resolver
 Prefix: /WEB-INF/views/
 Suffix: .jsp
 
+<<<<<<< HEAD
 ðŸŒ Accessing the Application
+=======
+í¼ Accessing the Application
+>>>>>>> e8512a4 (Updated professional README)
 Service	URL
 Frontend (vproweb)	http://localhost/
 
@@ -152,6 +255,7 @@ RabbitMQ Credentials
 Username: guest
 Password: guest
 
+<<<<<<< HEAD
 ðŸ›  Build Details
 Application Dockerfile
 
@@ -174,11 +278,32 @@ Exposes port 8080
 ðŸ§© Docker Compose Services
 
 vprodb â†’ MySQL database
+=======
+í°³ Build Details
+Dockerfile (Application)
+
+Multi-stage Docker build
+
+Build Stage:
+maven:3.9.9-eclipse-temurin-21-jammy
+
+Runtime Stage:
+tomcat:9.0-jdk11-temurin
+
+WAR deployed to Tomcat
+
+Port 8080 exposed
+
+Docker Compose Services
+
+vprodb â†’ MySQL
+>>>>>>> e8512a4 (Updated professional README)
 
 vprocache â†’ Memcached
 
 vpromq â†’ RabbitMQ
 
+<<<<<<< HEAD
 vproapp â†’ Java backend (Tomcat)
 
 vproweb â†’ Frontend service
@@ -191,10 +316,18 @@ Ensure service hostnames match those in application.properties.
 
 Verify environment variables if database connectivity fails.
 
+=======
+vproapp â†’ Java / Tomcat backend
+
+vproweb â†’ Frontend service
+
+í» ï¸ Logs & Troubleshooting
+>>>>>>> e8512a4 (Updated professional README)
 View Logs
 sudo docker compose logs -f vproapp
 sudo docker compose logs -f vprodb
 
+<<<<<<< HEAD
 ðŸŽ¯ Learning Outcomes
 
 Containerization of monolithic applications
@@ -208,4 +341,17 @@ Environment-based configuration management
 Debugging container startup and connectivity issues
 
 Production-like application deployment
+=======
+Common Issues
+
+MySQL container fails
+
+Verify .env credentials
+
+Check container logs
+
+RabbitMQ UnknownHost
+
+Ensure hostname rmq01 matches application.properties
+>>>>>>> e8512a4 (Updated professional README)
 
